@@ -1,7 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
-import Link from "./components/link/Link";
+import {Link as Test} from "./components/link/Link";
+import LinkClass from "./components/link/LinkClass";
 
 // function App() {
 //   return (
@@ -28,16 +28,50 @@ import Link from "./components/link/Link";
 // export default App;
 
 export default () => {
-    const links = [
-        {href: "/", text: "link"},
-        {href: "/", text: "link"},
-        {href: "/", text: "link"},
-        {href: "/", text: "link"},
-    ];
+    const linkData = {href: "/", text: "link", id: 1};
+    const links = [];
+
+    let [data, setData] = useState(links);
+
+    const onClick = async () => {
+        const data = await import("./components/link/DynamicInfo.js");
+        console.log(data.default);
+    };
+
+    useEffect(() => {
+        setInterval(() => {
+            if (links.length > 5) {
+                setData([
+                    {href: "/", text: "link", id: 1},
+                    {href: "/", text: "link", id: 2},
+                    {href: "/", text: "link", id: 3}
+                ]);
+            } else {
+                const id = linkData.id = ++linkData.id;
+                const newLinkData = {...linkData, id};
+
+                data.push(newLinkData);
+
+                setData([...links]);
+            }
+        }, 3000);
+    }, []);
 
     return (
-        <nav className="top-navbar">
-            {links.map((link, index) => <Link key={index} {...link} />)}
+        <nav className="top-navbar"
+            onClick={onClick}
+        >
+            {data.map((link, index) => {
+
+                return (
+                    <div key={link.id}>
+                        <Test {...link} />
+                    </div>
+                );
+
+            })}
+
+            { <LinkClass />}
         </nav>
     );
 };
