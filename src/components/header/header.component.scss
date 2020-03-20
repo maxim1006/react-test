@@ -1,0 +1,7 @@
+@import '../../assets/styles/common';
+
+.header {
+    padding: $padding-l;
+    color: $main-color;
+    @include box-shadow;
+}
