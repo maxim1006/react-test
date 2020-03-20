@@ -1,0 +1,11 @@
+@import '../../assets/styles/common';
+
+.link {
+    color: $link-color;
+}
+
+@media #{$tablet} {
+    .link {
+        color: yellow;
+    }
+}
