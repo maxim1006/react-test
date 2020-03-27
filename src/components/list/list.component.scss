@@ -1,18 +1,18 @@
 @import "../../assets/styles/common";
 
 .list {
-  color: $list-color;
+    color: $list-color;
 }
 
 @media #{$tablet} {
-  .list {
-    color: $secondary-color;
-    @include font-regular-large;
-  }
+    .list {
+        color: $secondary-color;
+        @include font-regular-large;
+    }
 }
 
 @media #{$mobile} {
-  .list {
-    @include list-block;
-  }
+    .list {
+        @include list-block;
+    }
 }
