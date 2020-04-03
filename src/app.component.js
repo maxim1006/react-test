@@ -1,21 +1,35 @@
 import React from "react";
 import "./app.component.scss";
-import Header from "./components/header/header.component";
 import List from "./components/list/list.component";
+import Tabs from "./components/tabs/tabs.component";
 
 function AppComponent() {
     return (
-        <div className="App">
-            <Header/>
-
-            <main>
-                Hello world text
-                <List>
-                    <li className="list__item">123</li>
-                    Some other text
-                </List>
-            </main>
-        </div>
+        <main className="app">
+            <Tabs>
+                <div tabName="Components">
+                    <List></List>
+                </div>
+                <div tabName="JSX">
+                    JSX examples
+                </div>
+                <div tabName="Routing">
+                    Routing examples
+                </div>
+                <div tabName="Forms">
+                    Forms examples
+                </div>
+                <div tabName="Styling">
+                    Styling examples
+                </div>
+                <div tabName="Redux">
+                    Redux examples
+                </div>
+                <div tabName="Animations">
+                    Animations examples
+                </div>
+            </Tabs>
+        </main>
     );
 }
 

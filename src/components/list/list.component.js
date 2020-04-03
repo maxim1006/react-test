@@ -5,7 +5,8 @@ import arrayData from "./list.data";
 export default class List extends Component {
     render() {
         const {children} = this.props;
-        const childrenListItems = children.filter(item => item.props && (item.props.className === "list__item"));
+
+        const childrenListItems = children && children.filter(item => item.props && (item.props.className === "list__item"));
         
         return (
             <>
