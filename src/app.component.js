@@ -12,7 +12,9 @@ function AppComponent() {
                     <List></List>
                 </div>
                 <div tabName="JSX">
-                    <JSX />
+                    {/*<Component title="Fetch">*/}
+                        <JSX />
+                    {/*</Component>*/}
                 </div>
                 <div tabName="Routing">
                     Routing examples
