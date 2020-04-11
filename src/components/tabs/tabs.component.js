@@ -6,6 +6,16 @@ export default class Tabs extends Component {
         activeTab: 0
     };
 
+    componentDidMount() {
+        const {activeTab} = this.props;
+
+        if (activeTab) {
+            this.setState({
+                activeTab
+            });
+        }
+    }
+
     render() {
         const {children} = this.props;
 

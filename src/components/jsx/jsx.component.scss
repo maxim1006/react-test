@@ -1,0 +1,14 @@
+@import '../../assets/styles/common';
+
+.jsx {
+    &__class {
+        &._red {
+            color: $red;
+        }
+
+        &._animated {
+            transition: all 2s;
+            background-color: green;
+        }
+    }
+}
