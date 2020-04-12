@@ -37,7 +37,7 @@ export default class Tabs extends Component {
                             (index === this.state.activeTab ? ' _active' : '')
                         }
                     >
-                        {child.props.tabName}
+                        {child.props && child.props.tabName}
                     </div>
                 );
             });

@@ -3,36 +3,57 @@ import "./app.component.scss";
 import List from "./components/list/list.component";
 import JSX from "./components/jsx/jsx.component";
 import Tabs from "./components/tabs/tabs.component";
+import Tab from "./components/tabs/tab.component";
 
 function AppComponent() {
+    const [tabsArray, setTabsArray] = useState([
+        {
+            name: "Components",
+            body: (<List />)
+        },
+        {
+            name: "JSX",
+            body: (<JSX/>)
+        },
+        {
+            name: "Routing",
+            body: "Routing examples"
+        }, {
+            name: "Forms",
+            body: "Forms examples"
+        }, {
+            name: "Styling",
+            body: "Styling examples"
+        }, {
+            name: "Routing",
+            body: "Routing examples"
+        }]
+    );
+
+    const onButtonClick = () => {
+        tabsArray.pop();
+        setTabsArray([...tabsArray]);
+    };
+
+    const getTabsView = (() => {
+        return (
+            tabsArray.map(({name, body}, index) => (
+                <Tab key={index} tabName={name}>
+                    {body}
+                </Tab>
+            ))
+        );
+    })();
+
     return (
-        <main className="app">
-            <Tabs activeTab={1}>
-                <div tabName="Components">
-                    <List></List>
-                </div>
-                <div tabName="JSX">
-                    {/*<Component title="Fetch">*/}
-                        <JSX />
-                    {/*</Component>*/}
-                </div>
-                <div tabName="Routing">
-                    Routing examples
-                </div>
-                <div tabName="Forms">
-                    Forms examples
-                </div>
-                <div tabName="Styling">
-                    Styling examples
-                </div>
-                <div tabName="Redux">
-                    Redux examples
-                </div>
-                <div tabName="Animations">
-                    Animations examples
-                </div>
-            </Tabs>
-        </main>
+        <>
+            <button type="button" onClick={onButtonClick}>remove tab</button>
+            <main className="app">
+                <Tabs activeTab={1}>
+                    {[...getTabsView]}
+                </Tabs>
+            </main>
+        </>
     );
 }
 
