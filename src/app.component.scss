@@ -4,3 +4,24 @@
     justify-content: center;
     padding: 20px 0;
 }
+
+.main-menu__link {
+    color: blue;
+}
+
+.main-menu__link._active {
+    animation: main-menu__link-animation 1.2s ease-in-out; //easing is not working properly
+    border-top: 10px solid;
+    border-image-slice: 2;
+    border-width: 5px;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
+
+@keyframes main-menu__link-animation {
+    from {
+        background-image: none;
+    }
+    to {
+        background-image: linear-gradient(270deg, #ff8a00, #e52e71);
+    }
+}
