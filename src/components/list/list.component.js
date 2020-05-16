@@ -8,6 +8,8 @@ export default class List extends Component {
         const {children} = this.props;
 
         const childrenListItems = children && children.filter(item => item.props && (item.props.className === "list__item"));
+
+        const arr = arrayData.map((listItem, index) => <li key={index} className="list__item">{listItem}</li>);
         
         return (
             <>

@@ -1,49 +1,14 @@
-import {NavLink} from "react-router-dom";
 import React from "react";
 import "./nav-menu.component.scss";
+import NavMenuLink from "./link/nav-menu-link.component";
 
-const NavMenu = () => {
+const NavMenu = ({links, ...rest}) => {
     // TODO make map with NavMenuLink components
+    // TODO style NavMenuLink
     return (
-        <div className="nav-menu">
-            <NavLink
-                strict
-                exact
-                to="/"
-                activeClassName="_active"
-                className="nav-menu__link"
-            >
-                Home
-            </NavLink>
-            <NavLink
-                strict
-                exact
-                to="/components"
-                activeClassName="_active"
-                className="nav-menu__link"
-            >
-                Components
-            </NavLink>
-            <NavLink
-                strict
-                exact
-                to="/redux"
-                activeClassName="_active"
-                className="nav-menu__link"
-            >
-                Redux
-            </NavLink>
-            <NavLink
-                strict
-                exact
-                to="/hooks"
-                activeClassName="_active"
-                className="nav-menu__link"
-            >
-                Hooks
-            </NavLink>
+        <div className="nav-menu" {...rest}>
+            {links.map(link => <NavMenuLink {...link} />)}
         </div>
-
     );
 };
 
