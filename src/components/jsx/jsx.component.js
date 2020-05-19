@@ -1,8 +1,13 @@
-import React, {memo, useEffect, useRef} from "react";
+import React, { memo, useEffect, useRef } from "react";
 import "./jsx.component.scss";
 
 export default memo(() => {
-    const styledCss = {backgroundColor: '#e8f3e8', color: '#333', marginTop: "10px", marginBottom: "20px"};
+    const styledCss = {
+        backgroundColor: "#e8f3e8",
+        color: "#333",
+        marginTop: "10px",
+        marginBottom: "20px",
+    };
     const classModifier = "_red";
     const countedId = "jsxId";
     const ref = useRef();
@@ -28,15 +33,14 @@ export default memo(() => {
 
             <h3>Class example</h3>
             <div className="jsx__class">Class string example</div>
-            <div ref={ref}
-                 className={`jsx__class _animated ${classModifier}`}
-            >
+            <div ref={ref} className={`jsx__class _animated ${classModifier}`}>
                 Class string example
             </div>
 
             <h3>Id example</h3>
-            <input type="text" id={countedId}/>
+            <input type="text" id={countedId} />
         </div>
     );
 });
 
+//this one has already been memo-ized

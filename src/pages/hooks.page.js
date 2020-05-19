@@ -1,3 +1,6 @@
+import { memo } from "react";
 const HooksPage = () => "Hooks Page";
 
-export default HooksPage;
+export default memo(HooksPage);
+
+//memoized

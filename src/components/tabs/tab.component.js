@@ -1,5 +1,9 @@
-function Tab({children}) {
+import { memo } from "react";
+
+function Tab({ children }) {
     return children;
 }
 
-export default Tab;
+export default memo(Tab);
+
+//memoized

@@ -1,30 +1,31 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./tabs.component.scss";
 
-export default class Tabs extends Component {
+export default class Tabs extends React.PureComponent {
     state = {
-        activeTab: 0
+        activeTab: 0,
     };
 
     componentDidMount() {
-        const {activeTab} = this.props;
+        const { activeTab } = this.props;
 
         if (activeTab) {
             this.setState({
-                activeTab
+                activeTab,
             });
         }
     }
 
     render() {
-        const {children} = this.props;
+        const { children } = this.props;
 
         let tabsHeader;
         let tabsBody;
 
         if (children) {
-
-            const currentChildren = Array.isArray(children) ? children : [children];
+            const currentChildren = Array.isArray(children)
+                ? children
+                : [children];
 
             // get header
             tabsHeader = currentChildren.map((child, index) => {
@@ -34,7 +35,7 @@ export default class Tabs extends Component {
                         key={index}
                         className={
                             "tabs__header-item" +
-                            (index === this.state.activeTab ? ' _active' : '')
+                            (index === this.state.activeTab ? " _active" : "")
                         }
                     >
                         {child.props && child.props.tabName}
@@ -46,10 +47,7 @@ export default class Tabs extends Component {
             tabsBody = currentChildren.map((child, index) => {
                 if (index === this.state.activeTab) {
                     return (
-                        <div
-                            className="tabs__content-item"
-                            key={index}
-                        >
+                        <div className="tabs__content-item" key={index}>
                             {child.props.children}
                         </div>
                     );
@@ -61,19 +59,17 @@ export default class Tabs extends Component {
 
         return (
             <div className="tabs">
-                <div className="tabs__header">
-                    {tabsHeader}
-                </div>
-                <div className="tabs__content">
-                    {tabsBody}
-                </div>
+                <div className="tabs__header">{tabsHeader}</div>
+                <div className="tabs__content">{tabsBody}</div>
             </div>
-        )
+        );
     }
 
     onClick = (index) => {
         this.setState((prevState, prevProps) => ({
-            activeTab: index
+            activeTab: index,
         }));
-    }
+    };
 }
+
+//changed to PureComponent

@@ -1,6 +1,8 @@
 import List from "../components/list/list.component";
-import React from "react";
+import React, { memo } from "react";
 
 const HomePage = () => <List />;
 
-export default HomePage;
+export default memo(HomePage);
+
+//memoized
