@@ -8,7 +8,7 @@ type styledCss = {
     marginBottom: string;
 };
 
-export default memo(() => {
+const JsxComponent = () => {
     const styledCss = {
         backgroundColor: "#e8f3e8",
         color: "#333",
@@ -24,7 +24,7 @@ export default memo(() => {
 
         if (width > 500) {
             requestAnimationFrame(() => {
-                ref.current.style.width = width + "px";
+                ref.current.style.width = `${width}px`;
 
                 requestAnimationFrame(() => {
                     ref.current.style.width = "300px";
@@ -48,4 +48,6 @@ export default memo(() => {
             <input type="text" id={countedId} />
         </div>
     );
-});
+};
+
+export default memo(JsxComponent);

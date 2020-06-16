@@ -23,7 +23,7 @@ function AppComponent() {
 
                     <main className="app__main">
                         <Suspense fallback={<SuspenseComponent />}>
-                            {/*покажет только первый найденный роут*/}
+                            {/* покажет только первый найденный роут*/}
                             <Switch>
                                 <Route
                                     path="/components"

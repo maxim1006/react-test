@@ -4,23 +4,20 @@ import arrayData from "./list.data";
 
 type myProps = {
     children?: any[];
-    childrenListItems?: string[];
+    childrenListItems?: React.ReactChild[];
     item?: any;
-
     name?: React.ReactNode;
 };
 
-export default class List extends Component<myProps> {
+export default class List extends Component<myProps, any> {
     render() {
-        console.log("list component render");
-        const { children } = this.props;
+        const { children = [] }: { children: React.ReactChild[] } = this.props;
 
-        const childrenListItems =
-            children &&
-            children.filter(
-                (item: { props: { className: string } }) =>
-                    item.props && item.props.className === "list__item"
-            );
+        const childrenListItems = children.filter(
+            ({ props }: React.ReactChild) => {
+                return props && props.className === "list__item";
+            }
+        );
 
         return (
             <>

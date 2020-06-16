@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import "./link.component.scss";
+
 type MyProps = {
     text: string;
     href: string;
     target: any;
 };
 
-export default class Link extends Component<MyProps> {
+export default class Link extends Component<MyProps, any> {
     render() {
-        let { text, href, ...rest } = this.props;
+        const { href, ...rest } = this.props;
+        let { text } = this.props;
 
         text = `The link goes to ${text}`;
 

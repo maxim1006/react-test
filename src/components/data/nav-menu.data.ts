@@ -1,18 +1,20 @@
-export const navMenuLinks = [
+import { NavMenuLinkModel } from "../../models/nav-menu-link.model";
+
+export const navMenuLinks: NavMenuLinkModel[] = [
     {
         text: "Home",
-        to: "/"
+        to: "/",
     },
     {
         text: "Components",
-        to: "/components"
+        to: "/components",
     },
     {
         text: "Redux",
-        to:"/redux"
+        to: "/redux",
     },
     {
         text: "Hooks",
-        to: "/hooks"
+        to: "/hooks",
     },
 ];

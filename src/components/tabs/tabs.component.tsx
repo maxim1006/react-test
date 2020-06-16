@@ -1,14 +1,13 @@
-import React, { Component, ReactNode } from "react";
+import React, { Component } from "react";
 import "./tabs.component.scss";
 
 type TabsComponentProps = {
     activeTab: number;
     tabsHeader: any;
-
     index: number;
 };
 
-export default class Tabs extends Component<TabsComponentProps> {
+export default class Tabs extends Component<TabsComponentProps, any> {
     state = {
         activeTab: 0,
     };
@@ -22,6 +21,12 @@ export default class Tabs extends Component<TabsComponentProps> {
             });
         }
     }
+
+    onClick = (index: number) => {
+        this.setState(() => ({
+            activeTab: index,
+        }));
+    };
 
     render() {
         const { children } = this.props;
@@ -37,16 +42,15 @@ export default class Tabs extends Component<TabsComponentProps> {
             // get header
             tabsHeader = currentChildren.map(
                 ({ child }: any, index: number) => {
+                    const { activeTab } = this.state;
+
                     return (
                         <div
                             onClick={() => this.onClick(index)}
                             key={index}
-                            className={
-                                "tabs__header-item" +
-                                (index === this.state.activeTab
-                                    ? " _active"
-                                    : "")
-                            }
+                            className={`tabs__header-item${
+                                index === activeTab ? " _active" : ""
+                            }`}
                         >
                             {child.props && child.props.tabName}
                         </div>
@@ -62,9 +66,8 @@ export default class Tabs extends Component<TabsComponentProps> {
                             {child.props.children}
                         </div>
                     );
-                } else {
-                    return "";
                 }
+                return "";
             });
         }
 
@@ -75,10 +78,4 @@ export default class Tabs extends Component<TabsComponentProps> {
             </div>
         );
     }
-
-    onClick = (index: number) => {
-        this.setState((prevState, prevProps) => ({
-            activeTab: index,
-        }));
-    };
 }
