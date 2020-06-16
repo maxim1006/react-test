@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import Link from "../link/link.component";
 import "./header.component.scss";
 
-type HeaderProps = {};
+type HeaderProps = { target: any; text: string; href: string };
 
 export default class Header extends PureComponent<HeaderProps, any> {
     render() {
