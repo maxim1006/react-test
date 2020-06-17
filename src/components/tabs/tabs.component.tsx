@@ -60,7 +60,8 @@ export default class Tabs extends Component<TabsComponentProps, any> {
 
             // get body
             tabsBody = currentChildren.map((child: any, index) => {
-                if (index === this.state.activeTab) {
+                const { activeTab } = this.state;
+                if (index === activeTab) {
                     return (
                         <div className="tabs__content-item" key={index}>
                             {child.props.children}

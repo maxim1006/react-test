@@ -35,7 +35,9 @@
         "eslint-plugin-typescript": "^0.14.0",
         "node-sass": "^4.14.1",
         "prettier": "2.0.5",
-        "typescript": "^3.9.3"
+        "pretty-quick": "^2.0.1",
+        "typescript": "^3.9.3",
+        "husky": "^4.0.3"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -45,7 +47,8 @@
         "report": "source-map-explorer 'build/static/js/*.js'",
         "ts:server": "cd ./typescript && ws --spa index.html --compress --open --static.maxage -1",
         "lint": "eslint ./src --ext .ts,.tsx,.js,.jsx",
-        "lint:fix": "eslint ./src --ext .ts,.tsx,.js,.jsx --fix"
+        "lint:fix": "eslint ./src --ext .ts,.tsx,.js,.jsx --fix",
+        "pretty-quick": "pretty-quick"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -60,6 +63,17 @@
             "last 1 chrome version",
             "last 1 firefox version",
             "last 1 safari version"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+            "prettier — double-quote — write",
+            "git add"
         ]
     }
 }
