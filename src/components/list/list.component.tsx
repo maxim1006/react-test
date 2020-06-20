@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, Props } from "react";
 import "./list.component.scss";
 import arrayData from "./list.data";
 
 type myProps = {
-    children?: any[];
+    children?: React.ReactNode;
     childrenListItems?: React.ReactChild[];
     item?: any;
     name?: React.ReactNode;
@@ -11,10 +11,12 @@ type myProps = {
 
 export default class List extends Component<myProps, any> {
     render() {
-        const { children = [] }: { children: React.ReactChild[] } = this.props;
+        const { children = [] } = this.props;
 
-        const childrenListItems = children.filter(
-            ({ props }: React.ReactChild) => {
+        const childrenListItems = (children as React.ReactChild[]).filter(
+            child => {
+                const { props }: any = child;
+
                 return props && props.className === "list__item";
             }
         );

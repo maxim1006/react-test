@@ -10,8 +10,8 @@ const NavMenu = ({ links, ...rest }: NavMenuProps) => {
     // TODO style NavMenuLink
     return (
         <div className="nav-menu" {...rest}>
-            {links.map((link: NavMenuLinkModel) => (
-                <NavMenuLink key={} {...link} />
+            {links.map((link: NavMenuLinkModel, index: number) => (
+                <NavMenuLink key={index} {...link} />
             ))}
         </div>
     );
