@@ -3,4 +3,15 @@
     flex-direction: column;
     justify-content: center;
     padding: 20px 0;
+    background: #100e4f;
+    color: #fff;
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+    }
 }
