@@ -1,4 +1,4 @@
-import React, { Component, Props } from "react";
+import React, { Component } from "react";
 import "./list.component.scss";
 import arrayData from "./list.data";
 
