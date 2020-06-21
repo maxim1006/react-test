@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./list.component.scss";
 import arrayData from "./list.data";
+import { StyledList, StyledListItem } from "./list.styled-component";
 
 type myProps = {
     children?: React.ReactNode;
@@ -24,7 +25,7 @@ export default class List extends Component<myProps, any> {
         return (
             <>
                 {children}
-                <ul className="list">
+                <StyledList>
                     {childrenListItems}
 
                     {arrayData.map(
@@ -32,12 +33,12 @@ export default class List extends Component<myProps, any> {
                             listItem: React.ReactNode,
                             index: string | number | undefined
                         ) => (
-                            <li key={index} className="list__item">
+                            <StyledListItem key={index}>
                                 {listItem}
-                            </li>
+                            </StyledListItem>
                         )
                     )}
-                </ul>
+                </StyledList>
             </>
         );
     }
