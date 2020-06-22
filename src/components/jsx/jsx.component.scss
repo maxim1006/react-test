@@ -1,9 +1,9 @@
-@import '../../assets/styles/common';
+@import "../../assets/styles/common";
 
 .jsx {
     &__class {
         &._red {
-            color: $red;
+            color: red;
         }
 
         &._animated {

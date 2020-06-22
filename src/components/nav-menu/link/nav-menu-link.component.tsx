@@ -9,16 +9,18 @@ type NavMenuLinkProps = {
 
 const NavMenuLink = ({ text, to, ...rest }: NavMenuLinkProps) => {
     return (
-        <NavLink
-            {...rest}
-            strict
-            exact
-            to={to}
-            activeClassName="_active"
-            className="nav-menu__link"
-        >
-            {text}
-        </NavLink>
+        <>
+            <NavLink
+                {...rest}
+                strict
+                exact
+                to={to}
+                activeClassName="_active"
+                className="nav-menu__link"
+            >
+                {text}
+            </NavLink>
+        </>
     );
 };
 

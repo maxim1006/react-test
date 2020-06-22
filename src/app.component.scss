@@ -1,9 +1,11 @@
+@import "./assets/styles/common";
+
 .app {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 20px 0;
-    background: #100e4f;
+    background: $background-color;
     color: #fff;
 
     &__main {
