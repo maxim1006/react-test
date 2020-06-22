@@ -7,6 +7,9 @@
     padding: 1rem 2rem;
     font-size: $font-big-size;
     background-color: $background-color;
+    -webkit-box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.75);
 
     &__link {
         text-decoration: none;
