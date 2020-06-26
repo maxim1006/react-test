@@ -4,6 +4,7 @@ import NavMenuLink from "./link/nav-menu-link.component";
 import { NavMenuLinkModel } from "../../models/nav-menu-link.model";
 import Logo from "./nav-menu.component.logo";
 import Title from "./nav-menu.component.title";
+import Star from "./nav-menu.component.star";
 
 type NavMenuProps = { links: NavMenuLinkModel[] };
 
@@ -13,7 +14,7 @@ const NavMenu = ({ links, ...rest }: NavMenuProps) => {
     return (
         <>
             <div className="nav-menu" {...rest}>
-                <Logo />
+                <Star />
                 <Title />
                 {links.map((link: NavMenuLinkModel, index: number) => (
                     <NavMenuLink key={index} {...link} />

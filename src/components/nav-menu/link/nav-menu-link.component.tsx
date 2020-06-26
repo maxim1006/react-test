@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import React, { memo } from "react";
+import "./nav-menu-link.component.scss";
 
 type NavMenuLinkProps = {
     text: string;

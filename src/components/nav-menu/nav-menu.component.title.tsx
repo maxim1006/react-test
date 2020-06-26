@@ -8,13 +8,15 @@ type logo = {
     transform: string;
     fontSize: number;
     flex: number;
+    margin: number;
 };
 
-const Title = ({ transformY = 8, fontSize = 24, flex = 1 }) => {
+const Title = ({ transformY = 8, fontSize = 24, flex = 1, margin = 10 }) => {
     const styles = {
         transform: `translateY(-${transformY})}px`,
         fontSize: `${fontSize}px`,
         flex: `${flex}`,
+        margin: `${margin}px`,
     };
     return (
         <span className="reactTitle" style={styles}>

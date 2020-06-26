@@ -1,0 +1,20 @@
+@import "../../../assets/styles/common.scss";
+
+.nav-menu__link {
+    padding: 10px;
+    text-decoration: none;
+    &._active {
+        animation: nav-menu__link-animation 0.2s ease-in-out;
+
+        border-bottom: 5px solid;
+    }
+}
+@keyframes nav-menu__link-animation {
+    0% {
+        border-bottom: 1px solid;
+    }
+
+    100% {
+        border-bottom: 5px solid;
+    }
+}
