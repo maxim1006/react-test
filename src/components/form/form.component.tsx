@@ -9,6 +9,8 @@ export type FormStateModel = {
     date?: string;
 };
 
+// TODO is to make formState fille with info from all inputs.
+
 const RtForm = () => {
     let initialFormState: FormStateModel = {
         checkbox: true,
