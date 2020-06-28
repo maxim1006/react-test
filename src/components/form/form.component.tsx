@@ -18,10 +18,14 @@ const RtForm = () => {
         textArea: "Please input description here",
     };
 
-    const [formState, setFormState] = useState<FormStateModel>({});
+    const [formState, setFormState] = useState<FormStateModel>({
+        checkbox: false,
+        text: "",
+        textArea: "Please input description here",
+    });
 
     useEffect(() => {
-        setFormState(initialFormState);
+        // setFormState(initialFormState);
     }, []);
 
     console.log(formState);
@@ -44,7 +48,12 @@ const RtForm = () => {
                 <input
                     type="text"
                     value={formState.text}
-                    onChange={e => console.log(e)}
+                    onChange={event => {
+                        setFormState({
+                            ...formState,
+                            text: event.target.value,
+                        });
+                    }}
                 />
             </div>
             <div className="rt-form__textarea">
