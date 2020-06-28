@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export type FormStateModel = {
     checkbox?: boolean;
@@ -12,21 +12,11 @@ export type FormStateModel = {
 // TODO is to make formState fille with info from all inputs.
 
 const RtForm = () => {
-    let initialFormState: FormStateModel = {
-        checkbox: true,
-        text: "",
-        textArea: "Please input description here",
-    };
-
     const [formState, setFormState] = useState<FormStateModel>({
         checkbox: false,
         text: "",
         textArea: "Please input description here",
     });
-
-    useEffect(() => {
-        // setFormState(initialFormState);
-    }, []);
 
     console.log(formState);
 
