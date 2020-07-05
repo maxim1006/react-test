@@ -21,12 +21,13 @@ const RtForm = () => {
     // }, []);
 
     const [formState, setFormState] = useState<FormStateModel>({
-        checkbox: false,
-        text: "",
-        textArea: "",
-        date: new Date().toISOString().substr(0, 10),
-        radio: "Option 1",
-        slider: "0",
+        checkbox: true,
+        date: "2020-07-24",
+        radio: "Option 2",
+        select: "option 3",
+        slider: "62",
+        text: "asdasd",
+        textArea: "asdasd",
     });
 
     return (
