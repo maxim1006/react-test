@@ -1,7 +1,9 @@
-import React from "react";
-import "./nav-menu.component.scss";
-import NavMenuLink from "./link/nav-menu-link.component";
-import { NavMenuLinkModel } from "../../models/nav-menu-link.model";
+import React from 'react';
+import './nav-menu.component.scss';
+import NavMenuLink from './link/nav-menu-link.component';
+import { NavMenuLinkModel } from '../../models/nav-menu-link.model';
+import Title from './nav-menu-title.component';
+import Logo from './nav-menu-logo.component';
 
 type NavMenuProps = { links: NavMenuLinkModel[] };
 
@@ -10,6 +12,8 @@ const NavMenu = ({ links, ...rest }: NavMenuProps) => {
     // TODO style NavMenuLink
     return (
         <div className="nav-menu" {...rest}>
+            <Logo />
+            <Title />
             {links.map((link: NavMenuLinkModel, index: number) => (
                 <NavMenuLink key={index} {...link} />
             ))}
