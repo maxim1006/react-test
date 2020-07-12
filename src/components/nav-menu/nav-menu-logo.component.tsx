@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { ReactComponent as LogoIcon } from '../../assets/icons/logo.svg';
 import './nav-menu-logo.component.scss';
 
@@ -20,4 +20,4 @@ const Logo = ({ width = 40, height = 40, transform = 10, fontSize = 10 }) => {
     return <LogoIcon style={styles} className="nav-menu__logo" />;
 };
 
-export default Logo;
+export default memo(Logo);
