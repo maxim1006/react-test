@@ -20,7 +20,7 @@ const Title = ({ transformY = 8, fontSize = 24, flex = 1, margin = 10 }) => {
         margin: `${margin}px`,
     };
     return (
-        <span className="nav-menu__title" style={styles}>
+        <span className="nav-menu-title" style={styles}>
             {' '}
             REACT PROJECT
         </span>

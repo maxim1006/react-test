@@ -17,7 +17,7 @@ const Logo = ({ width = 40, height = 40, transform = 10, fontSize = 10 }) => {
         fontSize: `${fontSize}px`,
     };
 
-    return <LogoIcon style={styles} className="nav-menu__logo" />;
+    return <LogoIcon style={styles} className="nav-menu-logo" />;
 };
 
 export default memo(Logo);

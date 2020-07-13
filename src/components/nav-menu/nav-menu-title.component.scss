@@ -1,9 +1,7 @@
 @import '../../assets/styles/common.scss';
 
-.nav-menu {
-    &__title {
-        transform: translateY(1px);
-        font-size: $font-large-size;
-        flex-grow: 1;
-    }
+.nav-menu-title {
+    transform: translateY(1px);
+    font-size: $font-large-size;
+    flex-grow: 1;
 }

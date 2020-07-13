@@ -7,11 +7,9 @@
     font-size: $font-big-size;
     background-color: $background-color;
     box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.75);
-    background: linear-gradient(to top, #008aff, #00ffe7);
-    animation: nav-menu-animation 5s linear infinite;
 
-    &__link {
-        color: blue;
+    & a {
+        color: white;
         padding: 10px;
         text-decoration: none;
         &:hover {
@@ -22,16 +20,6 @@
 
             border-bottom: 5px solid;
         }
-    }
-}
-
-@keyframes nav-menu-animation {
-    0%,
-    100% {
-        filter: hue-rotate(0deg);
-    }
-    50% {
-        filter: hue-rotate(360deg);
     }
 }
 
