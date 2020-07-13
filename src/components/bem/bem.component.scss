@@ -1,0 +1,9 @@
+.bem {
+    &._with-big-element {
+    }
+
+    &__element {
+        &._big {
+        }
+    }
+}
