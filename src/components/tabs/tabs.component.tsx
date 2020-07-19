@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import "./tabs.component.scss";
+import React, { Component } from 'react';
+import './tabs.component.scss';
 
 type TabsComponentProps = {
-    activeTab: number;
-    tabsHeader: any;
-    index: number;
+    activeTab?: number;
+    tabsHeader?: any;
+    index?: number;
 };
 
 export default class Tabs extends Component<TabsComponentProps, any> {
@@ -49,7 +49,7 @@ export default class Tabs extends Component<TabsComponentProps, any> {
                             onClick={() => this.onClick(index)}
                             key={index}
                             className={`tabs__header-item${
-                                index === activeTab ? " _active" : ""
+                                index === activeTab ? ' _active' : ''
                             }`}
                         >
                             {child.props && child.props.tabName}
@@ -68,7 +68,7 @@ export default class Tabs extends Component<TabsComponentProps, any> {
                         </div>
                     );
                 }
-                return "";
+                return '';
             });
         }
 

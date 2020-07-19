@@ -1,16 +1,23 @@
 import React from 'react';
-import RtForm from '../components/form/form.component';
-import Bem from '../components/bem/bem.component';
+import ParentComponent from '../components/parent/parent.component';
 
 const ComponentsPage: any = () => {
     return (
         <>
             <div>
-                <Bem />
+                <h3>Parent child interaction</h3>
+                <ParentComponent />
             </div>
-            <div>
-                <RtForm />
-            </div>
+            {/*<div>*/}
+            {/*    <h3>Parent Child component</h3>*/}
+            {/*    <Bem />*/}
+            {/*</div>*/}
+            {/*<div>*/}
+            {/*    <Bem />*/}
+            {/*</div>*/}
+            {/*<div>*/}
+            {/*    <RtForm />*/}
+            {/*</div>*/}
         </>
     );
 };
