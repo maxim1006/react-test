@@ -1,10 +1,16 @@
-import React from "react";
-import RtForm from "../components/form/form.component";
+import React from 'react';
+import RtForm from '../components/form/form.component';
+import Bem from '../components/bem/bem.component';
 
 const ComponentsPage: any = () => {
     return (
         <>
-            <RtForm />
+            <div>
+                <Bem />
+            </div>
+            <div>
+                <RtForm />
+            </div>
         </>
     );
 };

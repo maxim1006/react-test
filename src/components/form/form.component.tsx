@@ -1,14 +1,34 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from 'react';
+import Button from '@material-ui/core/Button';
+import Checkbox from '@material-ui/core/Checkbox';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import Select from '@material-ui/core/Select';
+import Slider from '@material-ui/core/Slider';
 
 export type FormStateModel = {
     checkbox?: boolean;
     text?: string;
     textArea?: string;
     radio?: string;
-    select?: string;
+    select?: any; //this should be different. It becomes undefined.
     date?: string;
     slider?: string;
 };
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        '& > *': {
+            margin: theme.spacing(1),
+            width: '25ch',
+        },
+    },
+}));
 
 // TODO is to make formState fille with info from all inputs.
 
@@ -22,25 +42,26 @@ const RtForm = () => {
 
     const [formState, setFormState] = useState<FormStateModel>({
         checkbox: true,
-        date: "2020-07-24",
-        radio: "Option 2",
-        select: "option 3",
-        slider: "62",
-        text: "asdasd",
-        textArea: "asdasd",
+        date: '2020-07-24',
+        radio: 'Option 2',
+        select: 'option 3',
+        slider: '62',
+        text: 'asdasd',
+        textArea: 'asdasd',
     });
-
+    const classes = useStyles();
     return (
         <form
             onSubmit={e => {
                 e.preventDefault();
                 console.log(formState);
             }}
-            className="rt-form"
+            className={classes.root}
+            noValidate
+            autoComplete="off"
         >
             <div className="rt-form__checkbox">
-                <input
-                    type="checkbox"
+                <Checkbox
                     checked={formState.checkbox}
                     onChange={event => {
                         setFormState({
@@ -50,7 +71,7 @@ const RtForm = () => {
                     }}
                 />
             </div>
-            <div className="rt-form__text">
+            <TextField variant="filled" className="rt-form__text">
                 <p>
                     {/*https://reactjs.org/docs/uncontrolled-components.html*/}
                     <span>Uncontrolled field</span>
@@ -59,9 +80,9 @@ const RtForm = () => {
                         type="text"
                         placeholder="Uncontrolled text input"
                     />
-                    <button onClick={() => console.log(ref.current.value)}>
+                    <Button onClick={() => console.log(ref.current.value)}>
                         Log input
-                    </button>
+                    </Button>
                 </p>
                 <p>Controlled field</p>
                 <input
@@ -74,10 +95,11 @@ const RtForm = () => {
                         });
                     }}
                 />
-            </div>
+            </TextField>
             <div className="rt-form__textarea">
-                <textarea
-                    placeholder="Please input description here"
+                <TextField
+                    className="rt-form__text"
+                    label="Please input description here"
                     value={formState.textArea}
                     onChange={event => {
                         setFormState({
@@ -87,11 +109,10 @@ const RtForm = () => {
                     }}
                 />
             </div>
-            <div className="rt-form__radio">
-                <input
-                    type="radio"
+            <RadioGroup className="rt-form__radio">
+                <Radio
                     value="Option 1"
-                    checked={formState.radio === "Option 1"}
+                    checked={formState.radio === 'Option 1'}
                     onChange={event => {
                         setFormState({
                             ...formState,
@@ -100,10 +121,9 @@ const RtForm = () => {
                     }}
                     name="rtFormRadio"
                 />
-                <input
-                    type="radio"
+                <Radio
                     value="Option 2"
-                    checked={formState.radio === "Option 2"}
+                    checked={formState.radio === 'Option 2'}
                     onChange={event => {
                         setFormState({
                             ...formState,
@@ -112,10 +132,9 @@ const RtForm = () => {
                     }}
                     name="rtFormRadio"
                 />
-                <input
-                    type="radio"
+                <Radio
                     value="Option 3"
-                    checked={formState.radio === "Option 3"}
+                    checked={formState.radio === 'Option 3'}
                     onChange={event => {
                         setFormState({
                             ...formState,
@@ -124,9 +143,9 @@ const RtForm = () => {
                     }}
                     name="rtFormRadio"
                 />
-            </div>
-            <div className="rt-form__slelect">
-                <select
+            </RadioGroup>
+            <div className="rt-form__select">
+                <Select
                     value={formState.select}
                     onChange={event => {
                         setFormState({
@@ -138,9 +157,9 @@ const RtForm = () => {
                     <option value="option 1">Option 1</option>
                     <option value="option 2">Option 2</option>
                     <option value="option 3">Option 3</option>
-                </select>
+                </Select>
             </div>
-            <div className="rt-form__date">
+            <TextField className="rt-form__date" type="date">
                 <input
                     type="date"
                     value={formState.date}
@@ -151,8 +170,8 @@ const RtForm = () => {
                         });
                     }}
                 />
-            </div>
-            <div className="rt-form__date">
+            </TextField>
+            <Slider className="rt-form__slider">
                 <input
                     value={formState.slider}
                     type="range"
@@ -165,10 +184,10 @@ const RtForm = () => {
                         });
                     }}
                 />
-            </div>
+            </Slider>
 
             <div>
-                <button type="submit">Submit form</button>
+                <Button type="submit">Submit form</Button>
             </div>
         </form>
     );

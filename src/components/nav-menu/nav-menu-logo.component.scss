@@ -1,0 +1,26 @@
+.nav-menu-logo path {
+    fill: transparent;
+    stroke-width: 40;
+    stroke: #42e9ff;
+    stroke-dasharray: 1810;
+    stroke-dashoffset: 0;
+    animation: nav-menu-logo-animation 2s linear infinite;
+    z-index: 1;
+}
+
+@keyframes nav-menu-logo-animation {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    40% {
+        stroke-dashoffset: 1810;
+    }
+    80% {
+        stroke-dashoffset: 3620;
+        fill: transparent;
+    }
+    100% {
+        stroke-dashoffset: 3620;
+        fill: #42e9ff;
+    }
+}

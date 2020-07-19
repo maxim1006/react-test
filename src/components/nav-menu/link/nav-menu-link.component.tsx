@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import React, { memo } from "react";
+import { NavLink } from 'react-router-dom';
+import React, { memo } from 'react';
 
 type NavMenuLinkProps = {
     text: string;
@@ -15,7 +15,7 @@ const NavMenuLink = ({ text, to, ...rest }: NavMenuLinkProps) => {
             exact
             to={to}
             activeClassName="_active"
-            className="nav-menu__link"
+            className="nav-menu-link"
         >
             {text}
         </NavLink>
