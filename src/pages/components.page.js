@@ -1,8 +1,13 @@
 import React from 'react';
 import ParentComponent from '../components/parent/parent.component';
 import RtFormAlternative from '../components/form/form-alternative.component';
+import RtForm from '../components/form/form.component';
 
-const ComponentsPage: any = () => {
+const ComponentsPage = () => {
+    const onSubmit = (...args) => {
+        console.log(args);
+    };
+
     return (
         <>
             <div>
@@ -17,9 +22,13 @@ const ComponentsPage: any = () => {
             {/*    <Bem />*/}
             {/*</div>*/}
             {/*<div>*/}
+            {/*    <h3>RtForm</h3>*/}
             {/*    <RtForm />*/}
             {/*</div>*/}
-            <RtFormAlternative />
+            {/*<div>*/}
+            {/*    <h3>RtFormAlternative</h3>*/}
+            {/*    <RtFormAlternative onSubmit={onSubmit} />*/}
+            {/*</div>*/}
         </>
     );
 };

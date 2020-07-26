@@ -1,13 +1,7 @@
 import React from 'react';
-import { Formik, Field, Form, FormikHelpers } from 'formik';
+import { Formik, Field, Form } from 'formik';
 
-interface Values {
-    firstName: string;
-    lastName: string;
-    email: string;
-}
-
-const RtFormAlternative = () => {
+const RtFormAlternative = ({ onSubmit }) => {
     return (
         <div>
             <h1>Signup</h1>
@@ -17,14 +11,11 @@ const RtFormAlternative = () => {
                     lastName: '',
                     email: '',
                 }}
-                onSubmit={(
-                    values: Values,
-                    { setSubmitting }: FormikHelpers<Values>
-                ) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
-                    }, 500);
+                onSubmit={(values, { setSubmitting }) => {
+                    console.log(JSON.stringify(values, null, 2));
+                    setSubmitting(false);
+
+                    onSubmit(values);
                 }}
             >
                 <Form>

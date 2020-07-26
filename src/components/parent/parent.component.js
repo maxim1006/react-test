@@ -1,16 +1,22 @@
 import React, { memo } from 'react';
 import ParentChildComponent from './components/parent-child.component';
 
-// TODO read https://reactjs.org/docs/context.html
+// 3 kinds of interactions
+/*
+ *
+ *
+ * */
 
-const ParentComponent: React.FC = () => {
+const ParentComponent = () => {
     return (
         <>
             <ParentChildComponent
-                onClick={(e: React.MouseEvent<HTMLDivElement>) => {
-                    console.log(e);
+                onClick={e => {
+                    console.log(e.target);
                 }}
                 prop={'prop'}
+                booleanProp
+                customCb={prop => console.log(prop)}
             />
         </>
     );

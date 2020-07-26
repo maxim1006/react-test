@@ -1,5 +1,13 @@
-use https://material-ui.com/
-to create form-material.component.tsx as same as in class
-[material-ui](https://material-ui.com/)
-create reactive form from our form.component
-https://formik.org/
+1. Transform every component to js
+2. Transform all scss to scss modules
+3. Create Todo list (
+   <TodoComponent>
+   <TodoControls>
+   <TodoInput>
+   <TodoAddButton>
+   <TodoFilters>  
+    <TodoList>
+   <TodoListItem>
+   <TodoCheckbox>
+   <TodoText>
+   ) in todo folder
