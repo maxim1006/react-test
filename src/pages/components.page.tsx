@@ -1,5 +1,6 @@
 import React from 'react';
 import ParentComponent from '../components/parent/parent.component';
+import RtFormAlternative from '../components/form/form-alternative.component';
 
 const ComponentsPage: any = () => {
     return (
@@ -18,6 +19,7 @@ const ComponentsPage: any = () => {
             {/*<div>*/}
             {/*    <RtForm />*/}
             {/*</div>*/}
+            <RtFormAlternative />
         </>
     );
 };
