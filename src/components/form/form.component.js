@@ -11,16 +11,6 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Select from '@material-ui/core/Select';
 import Slider from '@material-ui/core/Slider';
 
-export type FormStateModel = {
-    checkbox?: boolean;
-    text?: string;
-    textArea?: string;
-    radio?: string;
-    select?: any; //this should be different. It becomes undefined.
-    date?: string;
-    slider?: string;
-};
-
 const useStyles = makeStyles(theme => ({
     root: {
         '& > *': {
@@ -33,14 +23,14 @@ const useStyles = makeStyles(theme => ({
 // TODO is to make formState fille with info from all inputs.
 
 const RtForm = () => {
-    const ref = useRef<HTMLInputElement>(null!);
+    const ref = useRef();
 
     // useEffect(() => {
     //     // here we can use ref and be sure that view is rendered
     //     console.log(ref);
     // }, []);
 
-    const [formState, setFormState] = useState<FormStateModel>({
+    const [formState, setFormState] = useState({
         checkbox: true,
         date: '2020-07-24',
         radio: 'Option 2',

@@ -1,4 +1,4 @@
-export function getRandomIntInclusive(min: number, max: number) {
+export function getRandomIntInclusive(min, max) {
     const currentMin = Math.ceil(min);
     const currentMax = Math.floor(max);
 

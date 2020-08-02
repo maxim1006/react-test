@@ -1,13 +1,11 @@
-import React, { PureComponent } from "react";
-import Link from "../link/link.component";
-import "./header.component.scss";
+import React, { PureComponent } from 'react';
+import Link from '../link/link.component';
+import styles from './header.module.scss';
 
-type HeaderProps = { target: any; text: string; href: string };
-
-export default class Header extends PureComponent<HeaderProps, any> {
+export default class Header extends PureComponent {
     render() {
         return (
-            <header className="header">
+            <header className="styles.header">
                 <p className="header__text">
                     Hello my app! <br />
                     Edit <code>src/App.ajs</code> and save to reload.
