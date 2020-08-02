@@ -1,6 +1,8 @@
 import React, { memo } from 'react';
 
 const ParentChildComponent = ({ prop, onClick, booleanProp, customCb }) => {
+    console.log('ParentChildComponent');
+
     return (
         <>
             Prop: {prop} <br />

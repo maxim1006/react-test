@@ -2,6 +2,7 @@ import React from 'react';
 import ParentComponent from '../components/parent/parent.component';
 import RtFormAlternative from '../components/form/form-alternative.component';
 import RtForm from '../components/form/form.component';
+import ContextParentComponent from '../components/context/context-parent.component';
 
 const ComponentsPage = () => {
     const onSubmit = (...args) => {
@@ -11,9 +12,14 @@ const ComponentsPage = () => {
     return (
         <>
             <div>
-                <h3>Parent child interaction</h3>
-                <ParentComponent />
+                <h3>Context example</h3>
+                <ContextParentComponent />
             </div>
+
+            {/*<div>*/}
+            {/*    <h3>Parent child interaction</h3>*/}
+            {/*    <ParentComponent />*/}
+            {/*</div>*/}
             {/*<div>*/}
             {/*    <h3>Parent Child component</h3>*/}
             {/*    <Bem />*/}

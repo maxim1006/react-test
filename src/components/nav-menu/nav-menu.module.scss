@@ -1,5 +1,6 @@
 @import '../../assets/styles/common';
-.nav-menu {
+
+.navMenu {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -7,28 +8,4 @@
     font-size: $font-big-size;
     background-color: $background-color;
     box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.75);
-
-    & a {
-        color: white;
-        padding: 10px;
-        text-decoration: none;
-        &:hover {
-            opacity: 0.8;
-        }
-        &._active {
-            animation: nav-menu__link-animation 0.2s ease-in-out;
-
-            border-bottom: 5px solid;
-        }
-    }
-}
-
-@keyframes nav-menu__link-animation {
-    0% {
-        border-bottom: 1px solid;
-    }
-
-    100% {
-        border-bottom: 5px solid;
-    }
 }

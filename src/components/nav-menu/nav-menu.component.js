@@ -9,7 +9,7 @@ const NavMenu = ({ links, ...rest }) => {
     // TODO make map with NavMenuLink components
     // TODO style NavMenuLink
     return (
-        <div className="styles.nav-menu" {...rest}>
+        <div className={styles.navMenu} {...rest}>
             <Logo />
             <Title />
             {links.map((link, index) => (
