@@ -1,13 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import React, { memo } from 'react';
 
-type NavMenuLinkProps = {
-    text: string;
-    to: string;
-    rest?: any;
-};
-
-const NavMenuLink = ({ text, to, ...rest }: NavMenuLinkProps) => {
+const NavMenuLink = ({ text, to, ...rest }) => {
     return (
         <NavLink
             {...rest}

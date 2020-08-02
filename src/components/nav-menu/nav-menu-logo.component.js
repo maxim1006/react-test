@@ -2,13 +2,6 @@ import React, { memo } from 'react';
 import { ReactComponent as LogoIcon } from '../../assets/icons/logo.svg';
 import './nav-menu-logo.component.scss';
 
-type Logo = {
-    width: number;
-    height: number;
-    transform: string;
-    fontSize: number;
-};
-
 const Logo = ({ width = 40, height = 40, transform = 10, fontSize = 10 }) => {
     const styles = {
         width: `${width}px`,

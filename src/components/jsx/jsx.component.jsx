@@ -1,33 +1,26 @@
-import React, { memo, useEffect, useRef } from "react";
-import "./jsx.component.scss";
-
-type styledCss = {
-    backgroundColor: string;
-    color: string;
-    marginTop: string;
-    marginBottom: string;
-};
+import React, { memo, useEffect, useRef } from 'react';
+import './jsx.component.scss';
 
 const JsxComponent = () => {
     const styledCss = {
-        backgroundColor: "#e8f3e8",
-        color: "#333",
-        marginTop: "10px",
-        marginBottom: "20px",
+        backgroundColor: '#e8f3e8',
+        color: '#333',
+        marginTop: '10px',
+        marginBottom: '20px',
     };
-    const classModifier: string = "_red";
-    const countedId: string = "jsxId";
-    const ref: any = useRef();
+    const classModifier = '_red';
+    const countedId = 'jsxId';
+    const ref = useRef();
 
     useEffect(() => {
-        const width: number = ref.current.offsetWidth;
+        const width = ref.current.offsetWidth;
 
         if (width > 500) {
             requestAnimationFrame(() => {
                 ref.current.style.width = `${width}px`;
 
                 requestAnimationFrame(() => {
-                    ref.current.style.width = "300px";
+                    ref.current.style.width = '300px';
                 });
             });
         }

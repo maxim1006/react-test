@@ -5,13 +5,6 @@
 import React from 'react';
 import './nav-menu-title.component.scss';
 
-type Title = {
-    transform: string;
-    fontSize: number;
-    flex: number;
-    margin: number;
-};
-
 const Title = ({ transformY = 8, fontSize = 24, flex = 1, margin = 10 }) => {
     const styles = {
         transform: `translateY(-${transformY})}px`,

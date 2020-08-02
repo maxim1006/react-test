@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import './bem.component.scss';
 
-const Bem: React.FC = () => {
+const Bem = () => {
     return (
         <div className="bem _with-big-element">
             <div className="bem__element">Element</div>
