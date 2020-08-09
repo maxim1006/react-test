@@ -3,13 +3,13 @@
 .nav-menu-logo path {
     fill: transparent;
     stroke-width: 40;
-    stroke: #42e9ff;
+    stroke: #ffffff;
     stroke-dasharray: 1810;
     stroke-dashoffset: 0;
-    animation: nav-menu-logo-animation 2s linear infinite;
+    /*animation: nav-menu-logo-animation 2s linear infinite;*/
     z-index: 1;
 }
-
+/*
 @keyframes nav-menu-logo-animation {
     0% {
         stroke-dashoffset: 0;
@@ -26,3 +26,4 @@
         fill: #42e9ff;
     }
 }
+*/

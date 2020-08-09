@@ -3,6 +3,7 @@ import ParentComponent from '../components/parent/parent.component';
 import RtFormAlternative from '../components/form/form-alternative.component';
 import RtForm from '../components/form/form.component';
 import ContextParentComponent from '../components/context/context-parent.component';
+import TodoComponent from '../components/todo/todo.component';
 
 const ComponentsPage = () => {
     const onSubmit = (...args) => {
@@ -15,6 +16,8 @@ const ComponentsPage = () => {
                 <h3>Context example</h3>
                 <ContextParentComponent />
             </div>
+
+            <TodoComponent />
 
             {/*<div>*/}
             {/*    <h3>Parent child interaction</h3>*/}
