@@ -1,18 +1,18 @@
 import React, { memo } from 'react';
 import AddButton from './todo-add-button.component';
-import TodoControls from './todo-controls.component';
-import TodoInput from './todo-input.component';
-import TodoFilters from './todo-filters.component';
-import TodoText from './todo-text.component';
+import TodoInputComponent from './todo-input.component';
+import TodoFiltersComponent from './todo-filters.component';
+import TodoList from './todo-list.component';
+import TodoControlsComponent from './todo-controls.component';
 
-export default memo(function TodoComponent() {
+const TodoComponent = () => {
     return (
-        <div>
-            <TodoControls />
-            <TodoInput />
-            <AddButton />
-            <TodoFilters />
-            <TodoText />
-        </div>
+        <>
+            <TodoControlsComponent />
+            <TodoFiltersComponent />
+            <TodoList />
+        </>
     );
-});
+};
+
+export default memo(TodoComponent);

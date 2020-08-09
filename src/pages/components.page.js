@@ -17,8 +17,6 @@ const ComponentsPage = () => {
                 <ContextParentComponent />
             </div>
 
-            <TodoComponent />
-
             {/*<div>*/}
             {/*    <h3>Parent child interaction</h3>*/}
             {/*    <ParentComponent />*/}

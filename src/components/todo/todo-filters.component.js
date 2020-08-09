@@ -1,9 +1,26 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 
-export default memo(function TodoFilters() {
+const TodoFiltersComponent = () => {
+    const ref = useRef();
+
+    useEffect(() => {
+        ref.current.indeterminate = true;
+    }, []);
+
     return (
-        <div>
-            <input type="checkbox" />
-        </div>
+        <>
+            <label htmlFor="allTodosFilter">
+                All <input id="allTodosFilter" type="checkbox" />
+            </label>
+            <label htmlFor="inProgressTodosFilter">
+                In progress{' '}
+                <input ref={ref} id="inProgressTodosFilter" type="checkbox" />
+            </label>
+            <label htmlFor="completedTodosFilter">
+                Completed <input id="completedTodosFilter" type="checkbox" />
+            </label>
+        </>
     );
-});
+};
+
+export default memo(TodoFiltersComponent);

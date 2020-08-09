@@ -1,9 +1,7 @@
 import React, { memo } from 'react';
 
-export default memo(function TodoInput() {
-    return (
-        <div>
-            <input type="text" defaultValue="todo-input"></input>
-        </div>
-    );
-});
+const TodoInputComponent = () => {
+    return <input type="text" defaultValue="todo-input" />;
+};
+
+export default memo(TodoInputComponent);

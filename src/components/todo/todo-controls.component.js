@@ -1,5 +1,14 @@
 import React, { memo } from 'react';
+import TodoInputComponent from './todo-input.component';
+import AddButton from './todo-add-button.component';
 
-export default memo(function TodoControls() {
-    return <div>todo-controls</div>;
-});
+const TodoControlsComponent = () => {
+    return (
+        <>
+            <TodoInputComponent />
+            <AddButton />
+        </>
+    );
+};
+
+export default memo(TodoControlsComponent);
