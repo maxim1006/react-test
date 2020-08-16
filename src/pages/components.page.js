@@ -1,9 +1,5 @@
 import React from 'react';
-import ParentComponent from '../components/parent/parent.component';
-import RtFormAlternative from '../components/form/form-alternative.component';
-import RtForm from '../components/form/form.component';
-import ContextParentComponent from '../components/context/context-parent.component';
-import TodoComponent from '../components/todo/todo.component';
+import ImportsComponent from '../components/imports-and-exports/imports.component';
 
 const ComponentsPage = () => {
     const onSubmit = (...args) => {
@@ -13,9 +9,14 @@ const ComponentsPage = () => {
     return (
         <>
             <div>
-                <h3>Context example</h3>
-                <ContextParentComponent />
+                <h3>Imports and exports</h3>
+                <ImportsComponent />
             </div>
+
+            {/*<div>*/}
+            {/*    <h3>Context example</h3>*/}
+            {/*    <ContextParentComponent />*/}
+            {/*</div>*/}
 
             {/*<div>*/}
             {/*    <h3>Parent child interaction</h3>*/}

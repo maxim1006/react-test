@@ -1,24 +1,24 @@
 import React, { useContext } from 'react';
-import ThemeContext from '.././components/context/context-theme.component';
+import ThemeContext from '../context/context-theme.component';
 
 const HooksPage = () => {
-    let theme = useContext(ThemeContext);
-    console.log(theme);
-
-    const changeTheme = () => {
-        theme = theme === 'blue' ? 'red' : 'blue';
-        console.log(theme);
-    };
+    const { themeContextValue, changeThemeContextValue } = useContext(
+        ThemeContext
+    );
 
     return (
         <>
-            <ThemeContext.Provider value={theme.dark}>
-                <div>Hooks Page {theme}</div>
-                <button type="button" onClick={changeTheme}>
-                    change-theme
-                </button>
-            </ThemeContext.Provider>
+            <div>Hooks Page Theme context value {themeContextValue}</div>
+            <select
+                onChange={event => {
+                    changeThemeContextValue(event.target.value);
+                }}
+            >
+                <option value="dark">Dark theme</option>
+                <option value="light">Light theme</option>
+            </select>
         </>
     );
 };
+
 export default HooksPage;
