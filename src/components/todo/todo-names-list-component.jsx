@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import firebase from '../firebase/firebase';
 
 const useNames = () => {
@@ -37,4 +37,4 @@ const TodoNamesListComponent = () => {
     );
 };
 
-export default TodoNamesListComponent;
+export default memo(TodoNamesListComponent);
