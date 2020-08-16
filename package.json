@@ -4,6 +4,7 @@
     "private": true,
     "dependencies": {
         "@material-ui/core": "^4.11.0",
+        "@react-firebase/database": "^0.3.11",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.4.0",
         "@testing-library/user-event": "^7.2.1",
@@ -13,6 +14,7 @@
         "@types/react": "^16.9.35",
         "@types/react-dom": "^16.9.8",
         "@types/react-router-dom": "^5.1.5",
+        "firebase": "^7.17.2",
         "formik": "^2.1.5",
         "history": "^4.10.1",
         "local-web-server": "^4.2.0",

@@ -4,10 +4,14 @@ const handleClick = () => {
     console.log('123');
 };
 
-export default memo(function AddButton() {
+const AddButtonComponent = () => {
     return (
         <div>
-            <button onClick={handleClick}>todo-button</button>
+            <button onClick={handleClick} type="button">
+                todo-button
+            </button>
         </div>
     );
-});
+};
+
+export default memo(AddButtonComponent);
