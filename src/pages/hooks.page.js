@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import ThemeContext from '../context/context-theme.component';
+import ThemeContext from '../context/theme.context';
 
 const HooksPage = () => {
     const { themeContextValue, changeThemeContextValue } = useContext(
