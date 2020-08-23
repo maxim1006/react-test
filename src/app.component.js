@@ -27,7 +27,6 @@ function AppComponent() {
                 <ThemeContext.Provider
                     value={{ themeContextValue, changeThemeContextValue }}
                 >
-                    {JSON.stringify(appInfo)}
                     <Router history={history}>
                         <div className={styles.app}>
                             {/* TODO add links input to the NavMenu (links={links})*/}

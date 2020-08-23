@@ -1,14 +1,2 @@
-1. Create AppInfoContext
-
-AppInfoContext = {
-documentWidth,
-documentHeight,
-browser,
-currentDeviceType ('desktop', 'tablet', 'mobile')
-}
-
-width for currentDeviceType take from bootstrap layout
-
-https://getbootstrap.com/docs/4.0/layout/overview/
-
-AppInfoContext should be updated on window resize;
+1. Create AppInfoPopover that will show app info
+2. go through warning in console panel and fix them
