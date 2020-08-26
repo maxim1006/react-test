@@ -2,10 +2,6 @@ import React from 'react';
 import ImportsComponent from '../components/imports-and-exports/imports.component';
 
 const ComponentsPage = () => {
-    const onSubmit = (...args) => {
-        console.log(args);
-    };
-
     return (
         <>
             <div>
