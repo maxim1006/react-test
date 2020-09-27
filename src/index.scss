@@ -11,13 +11,14 @@
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: $background-color;
     @include font-base();
 
     &._light {
-        --background-color: #999;
+        --background-color: rgb(212, 209, 209);
     }
 
     &._dark {
-        --background-color: #000;
+        --background-color: #17141d;
     }
 }

@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense } from 'react';
 import styles from './app.module.scss';
 import { Route, Router, Switch } from 'react-router-dom';
 import history from './history';

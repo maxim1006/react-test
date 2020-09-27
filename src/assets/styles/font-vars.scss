@@ -2,10 +2,8 @@ $font-family: NotoSans, sans-serif;
 $font-small-size: 12px;
 $font-normal-size: 14px;
 $font-medium-size: 16px;
-$font-big-size: 18px;
-$font-large-size: 22px;
-
-
+$font-big-size: 24px;
+$font-large-size: 26px;
 
 /*base*/
 @mixin font-base() {
@@ -16,8 +14,6 @@ $font-large-size: 22px;
     font-display: swap;
 }
 /*****/
-
-
 
 /*font-light*/
 @mixin font-light() {
@@ -46,8 +42,6 @@ $font-large-size: 22px;
 }
 /**********/
 
-
-
 /*font-regular*/
 @mixin font-regular() {
     @include font-base;
@@ -73,8 +67,6 @@ $font-large-size: 22px;
     font-size: var(--font-regular-large-font-size, $font-large-size);
 }
 /**********/
-
-
 
 /*font-bold*/
 @mixin font-bold() {
