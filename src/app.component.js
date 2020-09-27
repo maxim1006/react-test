@@ -17,7 +17,7 @@ const ReduxPage = React.lazy(() => import('./pages/redux.page'));
 const HooksPage = React.lazy(() => import('./pages/hooks.page'));
 
 // TODO memo() for all components
-function AppComponent() {
+function App() {
     const { themeContextValue, changeThemeContextValue } = ThemeContextHook();
     const appInfo = AppContextHook();
 
@@ -63,4 +63,4 @@ function AppComponent() {
     );
 }
 
-export default AppComponent;
+export default App;

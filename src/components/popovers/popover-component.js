@@ -1,39 +1,21 @@
-import React, { useContext } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { memo, useContext, useRef, useState } from 'react';
 import Popover from '@material-ui/core/Popover';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import ThemeContext from '../../context/theme.context';
 
-const useStyles = makeStyles(theme => ({
-    typography: {
-        padding: theme.spacing(2),
-    },
-}));
-
-function PopoverComponent() {
+const Popover = () => {
+    const ref = useRef();
     const { themeContextValue, changeThemeContextValue } = useContext(
         ThemeContext
     );
-
-    const classes = useStyles();
-    const [anchorEl, setAnchorEl] = React.useState(null);
-
-    const handleClick = event => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    const open = Boolean(anchorEl);
-    const id = open ? 'simple-popover' : undefined;
+    const [open, setOpen] = useState(false);
+    const handleClick = () => setOpen(open => !open);
+    const handleClose = () => setOpen(false);
 
     return (
-        <div>
+        <>
             <Button
-                aria-describedby={id}
+                ref={ref}
                 variant="contained"
                 color="primary"
                 onClick={handleClick}
@@ -41,9 +23,8 @@ function PopoverComponent() {
                 Popover{themeContextValue}
             </Button>
             <Popover
-                id={id}
                 open={open}
-                anchorEl={anchorEl}
+                anchorEl={ref.current}
                 onClose={handleClose}
                 anchorOrigin={{
                     vertical: 'bottom',
@@ -57,11 +38,10 @@ function PopoverComponent() {
                     changeThemeContextValue(event.target.value);
                 }}
             >
-                <Typography className={classes.typography}>
-                    {themeContextValue}
-                </Typography>
+                {themeContextValue}
             </Popover>
-        </div>
+        </>
     );
-}
-export default PopoverComponent;
+};
+
+export default memo(Popover);

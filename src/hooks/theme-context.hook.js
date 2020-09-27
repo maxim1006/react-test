@@ -5,6 +5,10 @@ const ThemeContextHook = () => {
 
     useEffect(() => {
         document.body.classList.add(`_dark`);
+
+        return () => {
+            console.log('destroyed');
+        };
     }, []);
 
     const changeThemeContextValue = themeValue => {
@@ -12,14 +16,12 @@ const ThemeContextHook = () => {
 
         document.body.classList.remove(`_dark`, `_light`);
         document.body.classList.add(`_${themeValue}`);
-        let navMenuLinkComponent = document.querySelector('a');
-        navMenuLinkComponent.classList.remove(`_dark`, `_light`);
-        navMenuLinkComponent.classList.add(`_${themeValue}`);
     };
 
     return {
         themeContextValue,
         changeThemeContextValue,
+        setThemeContextValue,
     };
 };
 

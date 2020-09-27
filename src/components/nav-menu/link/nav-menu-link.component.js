@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import React, { memo } from 'react';
 import styles from './nav-menu-link.module.scss';
 
-const NavMenuLink = ({ text, to, ...rest }) => {
+const NavMenuLink = ({ text, to, linkStyleClass, ...rest }) => {
     //const active = true;
 
     return (
@@ -12,7 +12,7 @@ const NavMenuLink = ({ text, to, ...rest }) => {
             exact
             to={to}
             activeClassName="_active"
-            className={styles.navMenuLink}
+            className={`${styles.navMenuLink} ${linkStyleClass ?? ''}`}
         >
             {text}
         </NavLink>
