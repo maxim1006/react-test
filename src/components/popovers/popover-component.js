@@ -1,5 +1,5 @@
 import React, { memo, useContext, useRef, useState } from 'react';
-import Popover from '@material-ui/core/Popover';
+import MDPopover from '@material-ui/core/Popover';
 import Button from '@material-ui/core/Button';
 import ThemeContext from '../../context/theme.context';
 
@@ -22,7 +22,7 @@ const Popover = () => {
             >
                 Popover{themeContextValue}
             </Button>
-            <Popover
+            <MDPopover
                 open={open}
                 anchorEl={ref.current}
                 onClose={handleClose}
@@ -39,7 +39,7 @@ const Popover = () => {
                 }}
             >
                 {themeContextValue}
-            </Popover>
+            </MDPopover>
         </>
     );
 };

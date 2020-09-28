@@ -1,2 +1,1 @@
-1. Create AppInfoPopover that will show app info
-2. go through warning in console panel and fix them
+1. read redux docs (https://redux.js.org/introduction/getting-started)
