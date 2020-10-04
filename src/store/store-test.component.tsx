@@ -13,16 +13,12 @@ interface RootStateModel {
     todos: TodoModel[];
 }
 
-const state: RootStateModel = {
-    todos: [],
-};
-
 interface AddTodoActionModel {
     type: 'ADD_TODO';
     payload: TodoModel;
 }
 
-const addTodoAction = (todo: TodoModel) => ({
+const addTodoAction = (todo: TodoModel): AddTodoActionModel => ({
     type: 'ADD_TODO',
     payload: todo,
 });
@@ -60,7 +56,7 @@ store.dispatch(
         name: 'new Todo 1',
         id: '1',
         state: 'new',
-    }) as AddTodoActionModel
+    })
 );
 
 store.dispatch(
@@ -68,7 +64,7 @@ store.dispatch(
         name: 'new Todo 2',
         id: '2',
         state: 'completed',
-    }) as AddTodoActionModel
+    })
 );
 
 const StoreTest = () => {
