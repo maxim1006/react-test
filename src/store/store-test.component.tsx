@@ -3,6 +3,21 @@ import thunk from 'redux-thunk';
 import { applyMiddleware, compose, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
+// state
+// interface StateModel {}
+
+// action
+// interface ActionModel {
+//     type: string;
+//     payload: any;
+// }
+
+// actionCreator
+// type ActionCreatorModel = (arg: any) => ActionModel;
+
+// ReducerModel
+// type ReducerModel = (state: StateModel, action: ActionModel) => StateModel;
+
 interface TodoModel {
     name: string;
     id: string;
