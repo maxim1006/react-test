@@ -1,7 +1,19 @@
-import React, { memo } from 'react';
+import React, { FC, memo } from 'react';
+import TodoListItem from './todo-list-item.component';
+import { TodoModel } from '../../models/todo/todo.model';
 
-const TodoListComponent = () => {
-    return <>TodoListComponent</>;
+type TodoListProps = {
+    model: TodoModel[];
 };
 
-export default memo(TodoListComponent);
+const TodoList: FC<TodoListProps> = ({ model }) => {
+    return (
+        <ul>
+            {model.map((item: TodoModel) => (
+                <TodoListItem key={item.id} {...item} />
+            ))}
+        </ul>
+    );
+};
+
+export default memo(TodoList);

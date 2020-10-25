@@ -1,14 +1,16 @@
-import React, { memo } from 'react';
+import React, { FC, memo } from 'react';
 import TodoInputComponent from './todo-input.component';
-import AddButton from './todo-add-button.component';
+import TodoAddButton from './todo-add-button.component';
 
-const TodoControlsComponent = () => {
+type TodoControlsProps = {};
+
+const TodoControls: FC<TodoControlsProps> = () => {
     return (
         <>
             <TodoInputComponent />
-            <AddButton />
+            <TodoAddButton />
         </>
     );
 };
 
-export default memo(TodoControlsComponent);
+export default memo(TodoControls);

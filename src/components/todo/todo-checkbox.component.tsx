@@ -1,6 +1,9 @@
-// this file was empty
+import React, { FC, memo } from 'react';
 
-interface TodoCheckboxComponent {
-    type: any;
-}
-export default TodoCheckboxComponent;
+type TodoCheckboxProps = {};
+
+const TodoCheckbox: FC<TodoCheckboxProps> = () => {
+    return <>TodoCheckbox</>;
+};
+
+export default memo(TodoCheckbox);

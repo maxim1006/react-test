@@ -1,10 +1,12 @@
-import React, { memo } from 'react';
+import React, { FC, memo } from 'react';
 
-const handleClick = () => {
-    console.log('123');
-};
+type TodoAddButtonProps = {};
 
-const AddButtonComponent = () => {
+const TodoAddButton: FC<TodoAddButtonProps> = () => {
+    const handleClick = () => {
+        console.log('123');
+    };
+
     return (
         <div>
             <button onClick={handleClick} type="button">
@@ -14,4 +16,4 @@ const AddButtonComponent = () => {
     );
 };
 
-export default memo(AddButtonComponent);
+export default memo(TodoAddButton);

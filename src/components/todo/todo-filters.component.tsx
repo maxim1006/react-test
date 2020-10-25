@@ -1,19 +1,19 @@
-import React, { memo, useEffect, useRef } from 'react';
+import React, { FC, memo, useEffect, useRef } from 'react';
 
-interface TodoFiltersComponent {
-    current: any;
-}
+type TodoFiltersProps = {};
 
-const TodoFiltersComponent = () => {
+const TodoFilters: FC<TodoFiltersProps> = () => {
     const ref = useRef<HTMLInputElement>(null!); // as per the cheatsheet + InputElement
+    const ref1 = useRef<HTMLLabelElement>(null!); // as per the cheatsheet + InputElement
 
     useEffect(() => {
+        // ref && ref.current.indeterminate = true;
         ref.current.indeterminate = true;
     }, []);
 
     return (
         <>
-            <label htmlFor="allTodosFilter">
+            <label ref={ref1} htmlFor="allTodosFilter">
                 All <input id="allTodosFilter" type="checkbox" />
             </label>
             <label htmlFor="inProgressTodosFilter">
@@ -27,4 +27,28 @@ const TodoFiltersComponent = () => {
     );
 };
 
-export default memo(TodoFiltersComponent);
+export default memo(TodoFilters);
+
+// interface ModelWithGeneric<T = number> {
+//     prop: T;
+// }
+//
+// const obj: ModelWithGeneric<string> = {
+//     prop: '1',
+// };
+//
+// console.log(obj);
+
+// type FuncWithGeneric<T = number> = (arg?: T) => T;
+// interface FuncWithGenericModel<T = number> {
+//     func: (arg?: T) => T;
+// }
+//
+// const func: FuncWithGeneric = (arg = 1) => arg + 1;
+//
+// const objWithFunc: FuncWithGenericModel = {
+//     func: () => 1,
+// };
+//
+// console.log(func(12));
+// console.log(objWithFunc.func());

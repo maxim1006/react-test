@@ -1,7 +1,9 @@
-import React, { memo } from 'react';
+import React, { FC, memo } from 'react';
 
-const TodoInputComponent = () => {
+type TodoInputProps = {};
+
+const TodoInput: FC<TodoInputProps> = () => {
     return <input type="text" defaultValue="todo-input" />;
 };
 
-export default memo(TodoInputComponent);
+export default memo(TodoInput);

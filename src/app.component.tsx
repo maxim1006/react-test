@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
-import styles from './app.module.scss';
 import { Route, Router, Switch } from 'react-router-dom';
+import styles from './app.module.scss';
 import history from './history';
 import NotFound from './components/not-found/not-found.component';
 import HomePage from './pages/home.page';
@@ -16,8 +16,7 @@ const ComponentsPage = React.lazy(() => import('./pages/components.page'));
 const ReduxPage = React.lazy(() => import('./pages/redux.page'));
 const HooksPage = React.lazy(() => import('./pages/hooks.page'));
 
-// TODO memo() for all components
-function App() {
+const App = () => {
     const { themeContextValue, changeThemeContextValue } = ThemeContextHook();
     const appInfo = AppContextHook();
 
@@ -61,6 +60,6 @@ function App() {
             </AppContext.Provider>
         </>
     );
-}
+};
 
 export default App;
