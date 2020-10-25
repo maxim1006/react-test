@@ -1,7 +1,11 @@
 import React, { memo, useEffect, useRef } from 'react';
 
+interface TodoFiltersComponent {
+    current: any;
+}
+
 const TodoFiltersComponent = () => {
-    const ref = useRef();
+    const ref = useRef<HTMLInputElement>(null!); // as per the cheatsheet + InputElement
 
     useEffect(() => {
         ref.current.indeterminate = true;
