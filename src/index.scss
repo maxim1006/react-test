@@ -15,10 +15,26 @@ body {
     @include font-base();
 
     &._light {
-        --background-color: rgb(212, 209, 209);
+        --background-color: rgb(255, 255, 255);
     }
 
     &._dark {
-        --background-color: #17141d;
+        --background-color: rgb(255, 255, 255);
+    }
+}
+
+a._active {
+    animation: nav-menu__link-animation 0.2s ease-in-out;
+    border-bottom: 2px solid;
+    color: $link-color_active;
+}
+
+@keyframes nav-menu__link-animation {
+    0% {
+        border-bottom: 1px solid;
+    }
+
+    100% {
+        border-bottom: 2px solid;
     }
 }
