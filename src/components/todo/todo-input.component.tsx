@@ -1,9 +1,13 @@
-import React, { FC, memo } from 'react';
+import React, { ChangeEvent, FC, memo } from 'react';
 
-type TodoInputProps = {};
+type TodoInputProps = {
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+};
 
-const TodoInput: FC<TodoInputProps> = () => {
-    return <input type="text" defaultValue="todo-input" />;
+const TodoInput: FC<TodoInputProps> = ({ onChange }) => {
+    return (
+        <input onChange={onChange} type="text" placeholder="please type todo" />
+    );
 };
 
 export default memo(TodoInput);

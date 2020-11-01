@@ -1,11 +1,11 @@
 import React from 'react';
-import TodoComponent from '../components/todo/todo.component';
+import TodoContainer from '../components/todo/todo.container';
 
 const ReduxPage = () => {
     return (
         <>
             {/* <StoreTest /> */}
-            <TodoComponent />
+            <TodoContainer />
         </>
     );
 };

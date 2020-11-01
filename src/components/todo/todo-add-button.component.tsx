@@ -1,15 +1,13 @@
 import React, { FC, memo } from 'react';
 
-type TodoAddButtonProps = {};
+type TodoAddButtonProps = {
+    onClick: () => void;
+};
 
-const TodoAddButton: FC<TodoAddButtonProps> = () => {
-    const handleClick = () => {
-        console.log('123');
-    };
-
+const TodoAddButton: FC<TodoAddButtonProps> = ({ onClick }) => {
     return (
         <div>
-            <button onClick={handleClick} type="button">
+            <button onClick={onClick} type="button">
                 todo-button
             </button>
         </div>

@@ -1,14 +1,26 @@
-import React, { FC, memo } from 'react';
+import React, { FC, memo, useState } from 'react';
 import TodoInputComponent from './todo-input.component';
 import TodoAddButton from './todo-add-button.component';
+import { TodoModel } from '../../models/todo/todo.model';
 
-type TodoControlsProps = {};
+type TodoControlsProps = {
+    onAddTodo: (todo: TodoModel) => void;
+};
 
-const TodoControls: FC<TodoControlsProps> = () => {
+const TodoControls: FC<TodoControlsProps> = ({ onAddTodo }) => {
+    const [inputValue, setInputValue] = useState('');
+
+    const onButtonClick = () => {
+        onAddTodo({
+            name: inputValue,
+            id: `todo_${Date.now()}`,
+        });
+    };
+
     return (
         <>
-            <TodoInputComponent />
-            <TodoAddButton />
+            <TodoInputComponent onChange={e => setInputValue(e.target.value)} />
+            <TodoAddButton onClick={onButtonClick} />
         </>
     );
 };

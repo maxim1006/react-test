@@ -1,4 +1,4 @@
-import React, { FC, memo, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 import TodoList from './todo-list.component';
 import TodoControls from './todo-controls.component';
 import TodoFilters from './todo-filters.component';
@@ -7,8 +7,8 @@ import MaterialLoader from '../loader/MaterialLoader';
 
 type TodoProps = {};
 
-const Todo: FC<TodoProps> = () => {
-    const [todoListData, setTodoListData] = useState<{
+const Todo = memo<TodoProps>(() => {
+    const [todoList, setTodoList] = useState<{
         data: TodoModel[];
     }>({
         data: [],
@@ -27,7 +27,7 @@ const Todo: FC<TodoProps> = () => {
                     default: TodoModel[];
                 } = await import('./todo.data.json');
 
-                setTodoListData({
+                setTodoList({
                     data,
                 });
 
@@ -39,18 +39,28 @@ const Todo: FC<TodoProps> = () => {
         })();
     }, []);
 
+    const onAddTodo = useCallback(
+        (todo: TodoModel) => {
+            setTodoList(todoList => {
+                const data = [...todoList.data, todo];
+
+                return {
+                    ...todoList,
+                    data,
+                };
+            });
+        },
+        [todoList]
+    );
+
     return (
         <>
             <TodoFilters />
-            <TodoControls />
+            <TodoControls onAddTodo={onAddTodo} />
 
-            {loading ? (
-                <MaterialLoader />
-            ) : (
-                <TodoList model={todoListData.data} />
-            )}
+            {loading ? <MaterialLoader /> : <TodoList model={todoList.data} />}
         </>
     );
-};
+});
 
-export default memo(Todo);
+export default Todo;
