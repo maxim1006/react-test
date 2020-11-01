@@ -1,12 +1,6 @@
 @import '../../assets/styles/common.scss';
 
 .nav-menu-title {
-    transform: translateY(1px);
+    color: $link-color;
     font-size: $font-large-size;
-    flex-grow: 1;
-    background: linear-gradient(90deg, #ff8a00, #e52e71);
-    text-shadow: none;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }

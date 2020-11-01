@@ -1,6 +1,7 @@
 $main-color: var(--main-color, #17141d);
-$link-color: var(--link-color, #ffff);
+$link-color: var(--link-color, rgb(0, 0, 0));
 $secondary-color: var(--secondary-color, #b1a);
 $list-color: var(--list-color, #d42121);
 $background-color: var(--background-color, #17141d);
 $red: var(--red-color, #d40006);
+$link-color_active: var(--link-color_active, #1da1f2);
