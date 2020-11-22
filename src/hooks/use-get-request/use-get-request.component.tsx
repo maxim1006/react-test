@@ -1,6 +1,5 @@
-import React, { memo, useState } from 'react';
+import React, { memo } from 'react';
 import useGetRequest from './use-get-request.hook';
-import axios, { CancelTokenSource } from 'axios';
 
 type UseGetRequestProps = {};
 
