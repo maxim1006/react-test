@@ -3,7 +3,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 export default function useGetRequest<T>({
     url,
-    cb,
 }: {
     url: string;
     cb?: (data: T) => void;
@@ -12,6 +11,7 @@ export default function useGetRequest<T>({
     loading: boolean;
     refetch: () => void;
 } {
+    // cancelRequest = {current: undefined}
     const cancelRequest = useRef<CancelTokenSource>();
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -33,14 +33,12 @@ export default function useGetRequest<T>({
             });
 
             setData(data);
-
-            cb && cb(data);
         } catch (e) {
             console.log(`Get request to ${url} error `, e);
         } finally {
             setLoading(false);
         }
-    }, [url, cb]);
+    }, [url]);
 
     useEffect(() => {
         refetch();

@@ -1,19 +1,18 @@
-import React, { useContext } from 'react';
-import ThemeContext from '../context/theme.context';
-import Popover from '../components/popovers/popover-component';
-import UseState from '../hooks/use-state/use-state.component';
-import UseGetRequest from '../hooks/use-get-request/use-get-request.component';
+import React from 'react';
+import UseRef from '../hooks/use-ref/use-ref.component';
 
 const HooksPage = () => {
-    const { themeContextValue, changeThemeContextValue } = useContext(
-        ThemeContext
-    );
+    // const { themeContextValue, changeThemeContextValue } = useContext(
+    //     ThemeContext
+    // );
 
     return (
         <>
             <h3>Use state</h3>
-            <UseState />
-            <UseGetRequest />
+            <UseRef />
+            {/*<UseEffect />*/}
+            {/*<UseState />*/}
+            {/*<UseGetRequest />*/}
 
             {/*<div>Hooks Page Theme context value {themeContextValue}</div>*/}
             {/*<select*/}
