@@ -5,6 +5,9 @@ type UseRefProps = {};
 const UseRef = memo<UseRefProps>(() => {
     const ref = useRef<HTMLDivElement>(null!);
 
+    // 2nd way of useRef usage
+    const valueThatIsNotChangedOnRerendering = useRef<object>({});
+
     useEffect(() => {
         console.log('useEffect ref ', ref.current);
     }, []);
