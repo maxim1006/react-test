@@ -5,7 +5,6 @@
         "module": "esnext",
         "target": "es5",
         "lib": ["es6", "dom", "esnext.asynciterable"],
-        "include": ["./main.ts"],
         "sourceMap": true,
         "allowJs": true,
         "jsx": "react",
@@ -20,9 +19,11 @@
         "noUnusedLocals": true,
         "skipLibCheck": true
     },
+    "include": ["./examples/main.ts"],
     "exclude": [
         "node_modules",
         "build",
+        "dist",
         "scripts",
         "acceptance-tests",
         "webpack",
