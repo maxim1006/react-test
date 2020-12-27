@@ -1,5 +1,5 @@
 // import example
-import * as fromImports from "./examples/imports";
+// import * as fromImports from './examples/imports';
 
 // lazy-import example
 // document.documentElement.addEventListener("click", async () => {
@@ -11,4 +11,11 @@ import * as fromImports from "./examples/imports";
 //     }
 // });
 
-import "./examples/array";
+// import './examples/array';
+
+import module1 from './examples/module/module1.js';
+import module2 from './examples/module/module2.js';
+
+module1();
+module2();
+console.log(12345);
