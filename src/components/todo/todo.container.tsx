@@ -39,19 +39,16 @@ const Todo = memo<TodoProps>(() => {
         })();
     }, []);
 
-    const onAddTodo = useCallback(
-        (todo: TodoModel) => {
-            setTodoList(todoList => {
-                const data = [...todoList.data, todo];
+    const onAddTodo = useCallback((todo: TodoModel) => {
+        setTodoList(todoList => {
+            const data = [...todoList.data, todo];
 
-                return {
-                    ...todoList,
-                    data,
-                };
-            });
-        },
-        [todoList]
-    );
+            return {
+                ...todoList,
+                data,
+            };
+        });
+    }, []);
 
     return (
         <>

@@ -9,35 +9,35 @@ const ComponentsPage = () => {
                 <EnvExample />
             </div>
 
-            {/*<div>*/}
+            {/* <div>*/}
             {/*    <h3>Imports and exports</h3>*/}
             {/*    <ImportsComponent />*/}
-            {/*</div>*/}
+            {/* </div>*/}
 
-            {/*<div>*/}
+            {/* <div>*/}
             {/*    <h3>Context example</h3>*/}
             {/*    <ContextParentComponent />*/}
-            {/*</div>*/}
+            {/* </div>*/}
 
-            {/*<div>*/}
+            {/* <div>*/}
             {/*    <h3>Parent child interaction</h3>*/}
             {/*    <ParentComponent />*/}
-            {/*</div>*/}
-            {/*<div>*/}
+            {/* </div>*/}
+            {/* <div>*/}
             {/*    <h3>Parent Child component</h3>*/}
             {/*    <Bem />*/}
-            {/*</div>*/}
-            {/*<div>*/}
+            {/* </div>*/}
+            {/* <div>*/}
             {/*    <Bem />*/}
-            {/*</div>*/}
-            {/*<div>*/}
+            {/* </div>*/}
+            {/* <div>*/}
             {/*    <h3>RtForm</h3>*/}
             {/*    <RtForm />*/}
-            {/*</div>*/}
-            {/*<div>*/}
+            {/* </div>*/}
+            {/* <div>*/}
             {/*    <h3>RtFormAlternative</h3>*/}
             {/*    <RtFormAlternative onSubmit={onSubmit} />*/}
-            {/*</div>*/}
+            {/* </div>*/}
         </>
     );
 };

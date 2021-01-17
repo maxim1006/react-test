@@ -63,7 +63,7 @@ const RtForm = () => {
             </div>
             <TextField variant="filled" className="rt-form__text">
                 <p>
-                    {/*https://reactjs.org/docs/uncontrolled-components.html*/}
+                    {/* https://reactjs.org/docs/uncontrolled-components.html*/}
                     <span>Uncontrolled field</span>
                     <input
                         ref={ref}

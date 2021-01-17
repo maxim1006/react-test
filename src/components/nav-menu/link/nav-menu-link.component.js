@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import styles from './nav-menu-link.module.scss';
 
 const NavMenuLink = ({ text, to, linkStyleClass, ...rest }) => {
-    //const active = true;
+    // const active = true;
 
     return (
         <NavLink

@@ -20,7 +20,7 @@ export default function useSimpleGetRequest<T>({
                 console.log(`Get request to ${url} error `, e);
             }
         })();
-    }, []);
+    }, [url]);
 
     return {
         simpleData,

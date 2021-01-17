@@ -1,4 +1,4 @@
-//import { NavMenuLinkModel } from '../../models/nav-menu-link.model';
+// import { NavMenuLinkModel } from '../../models/nav-menu-link.model';
 
 export const navMenuLinks = [
     {

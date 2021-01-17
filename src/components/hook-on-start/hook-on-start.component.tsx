@@ -5,7 +5,7 @@ type HookOnStartProps = {};
 let intervalId: number;
 
 const HookOnStart: FC<HookOnStartProps> = memo<HookOnStartProps>(() => {
-    let [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(0);
 
     if (counter === 10) {
         clearInterval(intervalId);

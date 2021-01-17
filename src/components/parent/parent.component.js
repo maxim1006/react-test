@@ -25,7 +25,7 @@ const ParentComponent = () => {
             <ParentChildComponent
                 onClick={clickCb}
                 customCb={customCb}
-                prop={'prop'}
+                prop="prop"
                 booleanProp
             />
         </>
