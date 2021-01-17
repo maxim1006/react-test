@@ -1,13 +1,18 @@
 import React from 'react';
-import ImportsComponent from '../components/imports-and-exports/imports.component';
+import EnvExample from '../components/env-example/env-example.component';
 
 const ComponentsPage = () => {
     return (
         <>
             <div>
-                <h3>Imports and exports</h3>
-                <ImportsComponent />
+                <h3>Environment</h3>
+                <EnvExample />
             </div>
+
+            {/*<div>*/}
+            {/*    <h3>Imports and exports</h3>*/}
+            {/*    <ImportsComponent />*/}
+            {/*</div>*/}
 
             {/*<div>*/}
             {/*    <h3>Context example</h3>*/}
