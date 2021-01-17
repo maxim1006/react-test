@@ -1,5 +1,6 @@
 import React from 'react';
 import UseRef from '../hooks/use-ref/use-ref.component';
+import Weather from '../hooks/use-weather/use-weather.component';
 
 const HooksPage = () => {
     // const { themeContextValue, changeThemeContextValue } = useContext(
@@ -10,6 +11,7 @@ const HooksPage = () => {
         <>
             <h3>Use state</h3>
             <UseRef />
+            <Weather />
             {/*<UseEffect />*/}
             {/*<UseState />*/}
             {/*<UseGetRequest />*/}
