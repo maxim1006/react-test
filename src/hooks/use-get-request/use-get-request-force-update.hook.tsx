@@ -37,6 +37,8 @@ export default function useGetRequest<T>({
 
             cb && cb(data.current);
         } catch (e) {
+            // need the console.log for logging out possible errors
+            // eslint-disable-next-line no-console
             console.log(`Get request to ${url} error `, e);
         } finally {
             loading.current = true;

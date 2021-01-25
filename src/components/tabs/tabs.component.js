@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styles from './tabs.module.scss';
 
 export default class Tabs extends Component {
     state = {

@@ -9,7 +9,7 @@ const Bem = () => {
             <ul className="bem__list">
                 <li className="bem__list-item">List Item</li>
             </ul>
-            <a href="#" className="bem__link">
+            <a href="/#" className="bem__link">
                 Element 3
             </a>
         </div>

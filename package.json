@@ -50,11 +50,11 @@
         "eslint-plugin-react": "^7.20.0",
         "eslint-plugin-react-hooks": "^4.0.2",
         "eslint-plugin-typescript": "^0.14.0",
+        "husky": "^4.0.3",
         "node-sass": "^4.14.1",
         "prettier": "2.0.5",
         "pretty-quick": "^2.0.1",
-        "typescript": "^3.9.3",
-        "husky": "^4.0.3"
+        "typescript": "^3.9.3"
     },
     "scripts": {
         "start": "react-scripts start",

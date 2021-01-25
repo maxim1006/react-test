@@ -5,9 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
 import Select from '@material-ui/core/Select';
 import Slider from '@material-ui/core/Slider';
 
@@ -44,7 +41,6 @@ const RtForm = () => {
         <form
             onSubmit={e => {
                 e.preventDefault();
-                console.log(formState);
             }}
             className={classes.root}
             noValidate
@@ -70,6 +66,9 @@ const RtForm = () => {
                         type="text"
                         placeholder="Uncontrolled text input"
                     />
+
+                    {/* need this console.log for the button to work */
+                    /* eslint-disable-next-line no-console */}
                     <Button onClick={() => console.log(ref.current.value)}>
                         Log input
                     </Button>
