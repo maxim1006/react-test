@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Form } from 'formik';
 
 const RtFormAlternative = ({ onSubmit }) => {
     return (
@@ -12,26 +12,40 @@ const RtFormAlternative = ({ onSubmit }) => {
                     email: '',
                 }}
                 onSubmit={(values, { setSubmitting }) => {
-                    console.log(JSON.stringify(values, null, 2));
                     setSubmitting(false);
-
                     onSubmit(values);
                 }}
             >
                 <Form>
-                    <label htmlFor="firstName">First Name</label>
-                    <Field id="firstName" name="firstName" placeholder="John" />
+                    <label htmlFor="firstName">
+                        First Name
+                        <input
+                            id="firstName"
+                            name="firstName"
+                            type="text"
+                            placeholder="John"
+                        />
+                    </label>
 
-                    <label htmlFor="lastName">Last Name</label>
-                    <Field id="lastName" name="lastName" placeholder="Doe" />
+                    <label htmlFor="lastName">
+                        Last Name
+                        <input
+                            id="lastName"
+                            name="lastName"
+                            type="text"
+                            placeholder="Doe"
+                        />
+                    </label>
 
-                    <label htmlFor="email">Email</label>
-                    <Field
-                        id="email"
-                        name="email"
-                        placeholder="max@max.com"
-                        type="email"
-                    />
+                    <label htmlFor="email">
+                        Email
+                        <input
+                            id="email"
+                            name="email"
+                            placeholder="max@max.com"
+                            type="email"
+                        />
+                    </label>
 
                     <button type="submit">Submit</button>
                 </Form>

@@ -2,6 +2,14 @@ import { useEffect, useState } from 'react';
 import Bowser from 'bowser';
 import throttle from 'lodash/throttle';
 
+// helper
+function getDevice(documentWidth) {
+    if (documentWidth < 768) return 'phone';
+    if (documentWidth > 768 && documentWidth < 992) return 'laptop';
+    if (documentWidth > 992) return 'desktop';
+    return 'no information found';
+}
+
 const AppContextHook = () => {
     const [appInfo, setAppInfo] = useState();
 
@@ -34,10 +42,3 @@ const AppContextHook = () => {
 };
 
 export default AppContextHook;
-
-// helper
-function getDevice(documentWidth) {
-    if (documentWidth < 768) return 'phone';
-    if (documentWidth > 768 && documentWidth < 992) return 'laptop';
-    if (documentWidth > 992) return 'desktop';
-}

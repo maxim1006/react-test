@@ -7,6 +7,8 @@ const ThemeContextHook = () => {
         document.body.classList.add(`_dark`);
 
         return () => {
+            // need this console.log for the example to make sense
+            // eslint-disable-next-line no-console
             console.log('destroyed');
         };
     }, []);

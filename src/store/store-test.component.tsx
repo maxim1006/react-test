@@ -1,7 +1,5 @@
 import React, { memo } from 'react';
-import thunk from 'redux-thunk';
-import { applyMiddleware, compose, createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore } from 'redux';
 
 // state
 // interface StateModel {}
@@ -22,10 +20,6 @@ interface TodoModel {
     name: string;
     id: string;
     state: 'new' | 'progress' | 'completed';
-}
-
-interface RootStateModel {
-    todos: TodoModel[];
 }
 
 interface AddTodoActionModel {
@@ -63,6 +57,8 @@ function reducer(state = initState, action: AddTodoActionModel) {
 export const store = createStore(reducer);
 
 store.subscribe(() => {
+    // console.log needed for the example
+    // eslint-disable-next-line no-console
     console.log(store.getState());
 });
 

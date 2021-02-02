@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import Link from '../link/link.component';
-import styles from './header.module.scss';
 
 export default class Header extends PureComponent {
     render() {

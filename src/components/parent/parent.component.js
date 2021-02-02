@@ -1,4 +1,4 @@
-import React, { Component, memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import ParentChildComponent from './components/parent-child.component';
 
 // 3 kinds of interactions
@@ -8,14 +8,16 @@ import ParentChildComponent from './components/parent-child.component';
  *
  * */
 const ParentComponent = () => {
-    console.log('ParentComponent rerender');
     const [counter, setCounter] = useState(0);
 
     const clickCb = useCallback(e => {
-        console.log('clickCb');
+        // need this console.log for the example to work
+        // eslint-disable-next-line no-console
+        console.log('clickCb', e);
     }, []);
-
-    const customCb = useCallback(prop => console.log('customCb'), []);
+    // need console.log for the example to make sense
+    // eslint-disable-next-line no-console
+    const customCb = useCallback(prop => console.log('customCb', prop), []);
 
     return (
         <>

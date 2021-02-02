@@ -17,6 +17,8 @@ export default function useSimpleGetRequest<T>({
 
                 setSimpleData(data);
             } catch (e) {
+                // need the console.log for logging out possible errors
+                // eslint-disable-next-line no-console
                 console.log(`Get request to ${url} error `, e);
             }
         })();
