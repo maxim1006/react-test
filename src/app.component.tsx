@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Route, Router, Switch } from 'react-router-dom';
+import { Route, Router, Switch, Redirect } from 'react-router-dom';
 import styles from './app.module.scss';
 import history from './history';
 import NotFound from './components/not-found/not-found.component';
@@ -47,7 +47,16 @@ const App = () => {
                                             path="/hooks"
                                             component={HooksPage}
                                         />
-                                        <Route path="/" component={HomePage} />
+                                        <Route
+                                            path="/home"
+                                            component={HomePage}
+                                        />
+                                        <Route
+                                            path="/"
+                                            component={() => (
+                                                <Redirect to="/components" />
+                                            )}
+                                        />
                                         <Route path="*">
                                             <NotFound />
                                         </Route>

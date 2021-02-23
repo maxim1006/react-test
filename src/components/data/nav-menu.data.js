@@ -2,14 +2,14 @@
 
 export const navMenuLinks = [
     {
-        text: 'Home',
-        to: '/',
-        linkStyleClass: 'link-1',
-    },
-    {
         text: 'Components',
         to: '/components',
         linkStyleClass: 'link-2',
+    },
+    {
+        text: 'Home',
+        to: '/home',
+        linkStyleClass: 'link-1',
     },
     {
         text: 'Redux',

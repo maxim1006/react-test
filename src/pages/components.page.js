@@ -1,13 +1,18 @@
 import React from 'react';
-import EnvExample from '../components/env-example/env-example.component';
+import ConsoleLog from '../components/console/console-log.component';
 
 const ComponentsPage = () => {
     return (
         <>
             <div>
-                <h3>Environment</h3>
-                <EnvExample />
+                <h3>Console log</h3>
+                <ConsoleLog />
             </div>
+
+            {/* <div> */}
+            {/*    <h3>Environment</h3>*/}
+            {/*    <EnvExample />*/}
+            {/* </div> */}
 
             {/* <div>*/}
             {/*    <h3>Imports and exports</h3>*/}
